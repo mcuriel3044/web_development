@@ -104,3 +104,66 @@ window.addEventListener("scroll", function(){
         gotop.style.display = "none"
     }
 })
+
+/* Thursday, June 20, 2024*/
+/*FORM EVENTS*/
+/*input event*/
+//get reference to the form elements
+const myform = document.querySelector("#myform")
+const greeting = document.querySelector(".greeting")
+const greetingname = document.querySelector(".greeting p span")
+
+myform.addEventListener("submit" , function(event){
+    //prevent the default form submission behavior
+    event.preventDefault()
+    //start form validation, username
+    const usernameinput = document.querySelector("#username")
+    //collect the input text value
+    const username = usernameinput.value
+    //validation 1 = make surre the user types a username before pressig the submit button
+    if(username.trim() ===""){
+        alert("Please enter a username")
+        return; //stop further execution of the functions
+    }
+
+//if the validation passed, you can submit the data to the server
+ //client (frontend), server (backend) - discuss next week
+// greeting message after the validation
+
+greetingname.innerHTML = username
+greeting.style.display ="block"
+
+//after the form is submitted, we can clear the username
+usernameinput.value = ""
+
+})
+/**
+ * password validation
+ */
+//collect form elements
+const passwordfield = document.querySelector("#passwordfield")
+const submitbtn = document.querySelector(".submitbtn")
+// collect the password error message element
+const passworderror = document.querySelector(".passworderror")
+
+window.addEventListener("load", function(){
+    submitbtn.disabled = true
+    submitbtn.style.backgroundColor = "lightgray"
+})
+
+//check the length of the passpword
+passwordfield.addEventListener("input", function(){
+    let numbercharacter = passwordfield.value.length
+    if(numbercharacter<8){
+        passworderror.textContent = "Password must be 8+ characters"
+        passworderror.style.color = "red";
+        passwordfield.style.border = "solid 2px green"
+    }
+    else{
+        passworderror.textContent = "Good"
+        passworderror.style.color = "green";
+        passwordfield.style.border  = "solid 20x green"
+        submitbtn.disabled = false
+        submitbtn.style.backgroundColor = "red"
+    }
+})
