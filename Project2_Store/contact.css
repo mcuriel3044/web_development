@@ -1,0 +1,50 @@
+.btn{
+    padding: 10px;
+    background-color: lightgray;
+}
+.linkhome{
+    color: black;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.linkhome:hover{
+    opacity: 0.6;
+}
+/*== FORM===*/
+.form{
+    background-color: white;
+}
+.form fieldset{
+    width: 800px;
+    background-color: lightgray;
+    padding: 10px;
+    box-shadow: 1px 1px 8px grey;
+    border-radius: 6px;
+    margin: 5% auto;
+}
+.formlegend{
+    text-align: center;
+    background-color: whitesmoke;
+    border: ridge 2px white;
+    width: 300px;
+    padding: 12px;
+    font-size: 30;
+    margin: 1% auto;
+    border-radius: 10px;
+}
+.contact{
+    background-color: whitesmoke;
+    color: black;
+    display: flex;
+    padding: 20px;
+}
+.contactcolumn{
+    width: 33%;
+    padding: 20px;
+}
+.control{
+    margin-top: 20px;
+}
+.control label{
+padding: 20px;
+}
